@@ -1,0 +1,9 @@
+local-settings.json
+**/target/
+**/node_modules/
+**/dist/
+backend/src/main/resources/static/
+*.log
+*.jar
+*.class
+__pycache__/

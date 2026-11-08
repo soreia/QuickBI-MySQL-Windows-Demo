@@ -1,0 +1,39 @@
+server:
+  port: ${PORT:8081}
+  address: ${BIND_ADDRESS:127.0.0.1}
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: quickbi-mysql-local-demo
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/quickbiwin?sslMode=DISABLED&allowPublicKeyRetrieval=true&connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true}
+    username: ${DB_USER:qbwinportal}
+    password: ${DB_PASSWORD:Local-Portal-Demo-2026}
+    hikari:
+      maximum-pool-size: 10
+      transaction-isolation: TRANSACTION_READ_COMMITTED
+      connection-timeout: 3000
+  flyway:
+    enabled: true
+    user: ${MIGRATION_USER:qbwinmigrator}
+    password: ${MIGRATION_PASSWORD:Local-Migrator-Demo-2026}
+    sql-migration-separator: '-'
+    placeholders:
+      demoDatabase: ${DB_NAME:quickbiwin}
+      demoRuntimeUser: ${DB_USER:qbwinportal}
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+logging:
+  level:
+    root: WARN
+    demo: INFO
+    org.springframework.web: WARN
+    org.springframework.jdbc: WARN
+demo:
+  mode: ${DEMO_MODE:mock}
+  hmac-key: ${DEMO_HMAC_KEY:local-only-demo-key-change-before-sharing-2026}
+  generation: ${SESSION_GENERATION:windows-local-generation-1}
+  origins: ${DEMO_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,http://127.0.0.1:8081,http://localhost:8081}

@@ -1,0 +1,14 @@
+{
+  "DbHost": "127.0.0.1",
+  "DbPort": 3306,
+  "Database": "quickbiwin",
+  "DbUser": "qbwinportal",
+  "DbPassword": "Local-Portal-Demo-2026",
+  "MigrationUser": "qbwinmigrator",
+  "MigrationPassword": "Local-Migrator-Demo-2026",
+  "MySqlExe": "",
+  "ApiPort": 8081,
+  "FrontendPort": 5173,
+  "SessionGeneration": "windows-local-generation-1",
+  "HmacKey": "local-only-windows-demo-key-change-before-sharing-2026"
+}
